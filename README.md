@@ -43,3 +43,27 @@ Perbedaan utama ketiganya:
     -MVC umumnya digunakan dalam aplikasi desktop dan web tradisional.
     -MVT adalah pola arsitektur spesifik untuk Django dengan Template   menggantikan Controller.
     -MVVM digunakan dalam aplikasi berbasis klien, dengan ViewModel mengatur komunikasi antara Model dan View.
+
+
+--Tugas 3--
+
+-- Terdapat setidaknya 5 komponen yang menjadi pembeda antara form POST dan form GET dalam Django, yaitu:
+    - Dalam metode pengiriman data, form POST mengirim data sebagai bagian dari permintaan HTTP, sedangkan pada form GET, data dikirim sebagai query string dalam URL.
+    - Dalam Keamanan, Post lebih aman untuk data yang sensitif, sedangkan pada Get, data terbuka dan kurang aman.
+    - Batasan panjang data, Post tidak memiliki batasan yang bersifat baku tetapi terdapat batasan server, sedangkan Get memiliki batasan panjang URL.
+    - Caching, Post tidak dicache oleh browser, sedangkan Get dapat dicache oleh browser.
+    - Dalam Penggunaan, Post digunakan untuk mengirim data yang akan mengubah sumber daya di server, sedangkan Get digunakan untuk mengmbil informasi dari server tanpa mengubahnya.
+
+-- Perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data adalah:
+    - XML memberi kita fleksibilitas untuk mendefinisikan struktur data yang kompleks, biasanya digunakan untuk pertukaran data antar aplikasi atau untuk mengatur data yang rumit seperti dokumen atau konfigurasi. 
+    - JSON lebih sederhana dan ringkas dalam merepresentasikan data, sangat umum digunakan dalam pengembangan web, terutama untuk pertukaran data melalui API dan penyimpanan data yang mudah dimengerti.
+    - HTML adalah bahasa yang digunakan untuk mengatur tampilan dan struktur halaman web, berfokus pada cara konten ditampilkan di peramban web pengguna.
+
+-- JSON sering digunakan dalam pertukaran data antara aplikasi web modern karena kesederhanaan sintaksisnya yang mudah dibaca oleh manusia dan mudah diproses oleh mesin. JSON memiliki dukungan yang luas di berbagai bahasa pemrograman dan framework web, serta menjadi format standar dalam pengembangan RESTful APIs. Kemampuan JSON untuk mendukung beragam tipe data, mudah diuji, dan platform-agnostic membuatnya menjadi pilihan yang ideal untuk komunikasi antar aplikasi web yang berjalan pada berbagai lingkungan dan platform.
+
+-- Langkah-langkah pengimplementasian cheklist pada Tugas 3:
+1. Untuk membuat input form yang pertama dilakukan adalah membuat berkas baru pada direktori main yang digunakan untuk membuat struktur form yang dapat menerima data prouk baru. Membuat model dan menginisiasi fields dengan atribut yang akan digunakan. Selanjutnya membuat fungsi baru untuk menerima parameter request pada berkas views. Kemudian membuat berkas HTML yang akan digunakan untuk menampilkan input form tersebut pada peramban web pengguna.
+2. Untuk menambahkan 5 fungsi views dengan kelima format yang di berikan yang pertama dilakukan adalah dengan mengembalikan data maupun mengembalikan data berdasarkan ID dalam bentuk format yang diberikan, yaitu XML, JSON, XML by ID, JSON by ID dan format HTML untuk menampilkan data pada peramban web. Dengan menambahkan fungsi baru yang digunakan untuk menerima parameter request pada tiap format pada berkas views.py dan me-return fungsi-fungsi tersebut serta menambahkan path url ke dalam berkas urls.py sehingga views dapat diakses dengan routing pada url.
+3. Untuk membuat routing url untuk setiap views yang ada yaitu dengan menghilangkan path "main/" yang ada pada berkas urls.py pada root folder. Dengan demikian, setiap view dapat diakses dengan menambahkan "/" dan format views yang diinginkan pada url.
+
+-- screenshot kelima url hasil akses pada Postman dalam bentuk link googledrive, berikut linknya: https://drive.google.com/drive/folders/1cVks04kNKf9oV-3PNkePU0SXtje7fAxX?usp=sharing
