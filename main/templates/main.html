@@ -1,40 +1,53 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Shopping List Page</h1>
+    <div class="container">
+        <h1>Stok Online TokoBerkah</h1>
 
-    <h5>Name:</h5>
-    <p>{{name}}</p>
+        <div class="user-info">
+            <h5>Name:</h5>
+            <p>{{ name }}</p>
 
-    <h5>Class:</h5>
-    <p>{{class}}</p>
-    
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Amount</th>
-            <th>Description</th>
-        </tr>
-    
-        {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-    
-        {% for product in products %}
-            <tr>
-                <td>{{product.name}}</td>
-                <td>{{product.price}}</td>
-                <td>{{product.amount}}</td>
-                <td>{{product.description}}</td>
-            </tr>
-        {% endfor %}
-    </table>
-    
-    <br />
-    
-    <a href="{% url 'main:create_product' %}">
-        <button>
-            Add New Product
-        </button>
-    </a>
-    
-    {% endblock content %}
+            <h5>Class:</h5>
+            <p>{{ class }}</p>
+
+            
+        </div>
+
+        <div class="inventory-message">
+            <p>Kamu menyimpan {{ products|length }} item pada aplikasi ini</p>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Amount</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
+                {% for product in products %}
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.price }}</td>
+                        <td>{{ product.amount }}</td>
+                        <td>{{ product.description }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="action-buttons">
+            <a href="{% url 'main:create_product' %}">
+                <button class="btn btn-primary">Tambah Produk Baru</button>
+            </a>
+            <a href="{% url 'main:logout' %}">
+                <button class="btn btn-danger">Logout</button>
+            </a>
+            <h5>Sesi terakhir login: {{ last_login }}</h5>
+        </div>
+    </div>
+{% endblock content %}

@@ -67,3 +67,26 @@ Perbedaan utama ketiganya:
 3. Untuk membuat routing url untuk setiap views yang ada yaitu dengan menghilangkan path "main/" yang ada pada berkas urls.py pada root folder. Dengan demikian, setiap view dapat diakses dengan menambahkan "/" dan format views yang diinginkan pada url.
 
 -- screenshot kelima url hasil akses pada Postman dalam bentuk link googledrive, berikut linknya: https://drive.google.com/drive/folders/1cVks04kNKf9oV-3PNkePU0SXtje7fAxX?usp=sharing
+
+
+-- Tugas 4 --
+-- Django UserCreationForm adalah sebuah formulir bawaan yang disediakan oleh Django untuk memudahkan pembuatan akun pengguna dalam aplikasi web. Formulir ini digunakan untuk mengumpulkan informasi yang diperlukan untuk membuat pengguna baru, seperti nama pengguna (username) dan kata sandi (password), serta informasi tambahan yang mungkin diperlukan sesuai dengan konfigurasi aplikasi Anda.
+    Kelebihan:
+    - Mudah Digunakan
+    - Validasi Otomatis
+    - Fleksibel
+
+    Kekurangan:
+    - Tidak dapat di Kustom
+    - Penggunaan Default Template
+
+-- Autentikasi adalah proses verifikasi identitas pengguna (misal, dengan username dan password), sementara otorisasi adalah pengaturan izin yang memutuskan apa yang dapat dilakukan oleh pengguna yang telah terautentikasi. Autentikasi memastikan pengguna sah, sementara otorisasi mengendalikan akses mereka ke fitur dan data. Keduanya penting dalam menjaga keamanan dan privasi serta mengendalikan akses dalam aplikasi. Django menyediakan alat untuk mengimplementasikan keduanya dengan efisien.
+
+-- Cookies dalam konteks aplikasi web adalah data kecil yang disimpan di peramban pengguna untuk mengidentifikasi dan melacak penggunaan situs web. Django menggunakan cookies untuk mengelola data sesi pengguna dengan menyimpan informasi sesi seperti ID sesi atau preferensi pengguna secara aman pada peramban pengguna. Ini memungkinkan aplikasi untuk menjaga status pengguna selama mereka berinteraksi dengan situs web tanpa perlu masuk ulang. Django menyediakan dukungan bawaan untuk mengelola cookies sesi pengguna melalui modul django.contrib.sessions.
+
+-- Penggunaan cookies dalam pengembangan web dapat aman secara default, tetapi ada risiko potensial seperti pelacakan pengguna dan kerentanannya terhadap serangan seperti perusakan cookie atau peretasan sesi. Pengembang perlu memahami risiko ini dan mengimplementasikan praktik keamanan seperti enkripsi dan kebijakan penggunaan cookies yang bijak untuk meminimalkan risiko tersebut.
+
+-- Pengimplementasian checklist:
+1. memodifikasi beberapa berkas diantaranya yaitu menambahkan fungsi-fungsi baru pada berkas views.py dan menghubungkan urls tersebut dengan menambahkan path url pada berkas urls.py dan menambahkan fitur-fitur yang dibutuhkan pada file html.
+2. menambahkan fungsi baru pada fungsi show main dan meodifikasi fungsi-fungsi yang udah ada sebelumnya. Menambahkan import datetime untuk menambilkan last login.
+3. Untuk menghubungkan  model Item dengan User, perlu mengimport User tsb pada berkas models.py dan menambahkan potongan kode pada model Product yang ada serta membuat fungsi baru.
