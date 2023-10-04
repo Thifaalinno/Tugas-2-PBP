@@ -2,23 +2,26 @@
 
 {% block content %}
     <div class="container">
-        <h1>Stok Online TokoBerkah</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">Stok Online TokoBerkah</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <span class="navbar-text text-light">Welcome, {{ name }}</span>
+                    </li>
+                </ul>
+            </div>
+            <a href="{% url 'main:logout' %}" class="btn btn-danger ml-auto">Logout</a>
+        </nav>
 
-        <div class="user-info">
-            <h5>Name:</h5>
-            <p>{{ name }}</p>
-
-            <h5>Class:</h5>
-            <p>{{ class }}</p>
-
-            
-        </div>
-
-        <div class="inventory-message">
+        <div class="inventory-message mt-4">
             <p>Kamu menyimpan {{ products|length }} item pada aplikasi ini</p>
         </div>
 
-        <table class="table">
+        <table class="table mt-4">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -35,17 +38,26 @@
                         <td>{{ product.price }}</td>
                         <td>{{ product.amount }}</td>
                         <td>{{ product.description }}</td>
+                        <td>
+                            <a href="{% url 'main:edit_product' product.pk %}">
+                                <button>
+                                    Edit
+                                </button>
+                            </a>
+                            <a href="{% url 'main:delete_product' product.pk %}">
+                                  <button>
+                                      Delete
+                                  </button>
+                              </a>
+                        </td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
 
-        <div class="action-buttons">
+        <div class="action-buttons mt-4">
             <a href="{% url 'main:create_product' %}">
                 <button class="btn btn-primary">Tambah Produk Baru</button>
-            </a>
-            <a href="{% url 'main:logout' %}">
-                <button class="btn btn-danger">Logout</button>
             </a>
             <h5>Sesi terakhir login: {{ last_login }}</h5>
         </div>

@@ -90,3 +90,71 @@ Perbedaan utama ketiganya:
 1. memodifikasi beberapa berkas diantaranya yaitu menambahkan fungsi-fungsi baru pada berkas views.py dan menghubungkan urls tersebut dengan menambahkan path url pada berkas urls.py dan menambahkan fitur-fitur yang dibutuhkan pada file html.
 2. menambahkan fungsi baru pada fungsi show main dan meodifikasi fungsi-fungsi yang udah ada sebelumnya. Menambahkan import datetime untuk menambilkan last login.
 3. Untuk menghubungkan  model Item dengan User, perlu mengimport User tsb pada berkas models.py dan menambahkan potongan kode pada model Product yang ada serta membuat fungsi baru.
+
+-- Tugas 5 --
+-- berikut adalah manfaat dari setiap elemen selector dan kapan waktu yang tepat untuk menggunakannya:
+ - Universal Selector (*):
+Manfaat: Memengaruhi semua elemen dalam dokumen.
+Kapan digunakan: Situasi khusus yang memerlukan pengaruh global pada semua elemen.
+- ID Selector (#):
+Manfaat: Memengaruhi elemen dengan id tertentu.
+Kapan digunakan: Ketika Anda ingin memengaruhi elemen tunggal dengan id unik.
+- Type Selector (Element Selector):
+Manfaat: Memengaruhi semua elemen dengan jenis yang sama.
+Kapan digunakan: Untuk gaya elemen umum dengan jenis yang sama, seperti paragraf atau heading.
+- Class Selector (.):
+Manfaat: Memengaruhi elemen dengan class tertentu.
+Kapan digunakan: Untuk menerapkan gaya atau logika pada beberapa elemen dengan class yang sama, seperti tombol.
+- Attribute Selector ([]):
+Manfaat: Memengaruhi elemen berdasarkan atribut dan nilainya.
+Kapan digunakan: Saat Anda ingin memilih elemen dengan atribut tertentu, seperti <a href="...">.
+- Pseudo-class Selector (:):
+Manfaat: Memengaruhi elemen berdasarkan keadaan atau interaksi pengguna.
+Kapan digunakan: Untuk memberikan efek interaktif, seperti mengubah warna link saat kursor mengarah padanya.
+
+--  berikut adalah beberapa tag HTML5 yang umum digunakan secara singkat:
+<header>: Digunakan untuk bagian kepala dari suatu elemen atau dokumen, biasanya berisi judul atau logo.
+<nav>: Mendefinisikan bagian navigasi dalam dokumen.
+<main>: Menandakan konten utama dalam dokumen HTML.
+<section>: Digunakan untuk mengelompokkan konten yang saling terkait dalam dokumen.
+<article>: Digunakan untuk mengelompokkan konten yang independen, seperti postingan blog atau artikel berita.
+<aside>: Mendefinisikan konten yang terkait, tetapi bukan bagian utama dari dokumen.
+<footer>: Digunakan untuk bagian penutup atau kaki dari suatu elemen atau dokumen.
+<div>: Kontainer generik untuk mengelompokkan dan mengatur elemen-elemen HTML.
+<p>: Menandakan paragraf teks.
+<a>: Membuat tautan atau hyperlink ke halaman lain atau sumber eksternal.
+<img>: Menampilkan gambar di dalam dokumen.
+<ul> dan <ol>: Digunakan untuk membuat daftar tak berurutan (unordered list) dan daftar berurutan (ordered list).
+<li>: Mendefinisikan elemen dalam daftar, baik itu dalam <ul> atau <ol>.
+<table>: Digunakan untuk membuat tabel dalam dokumen.
+<form>: Membuat formulir yang memungkinkan pengguna untuk mengirimkan data.
+<input>: Menambahkan berbagai jenis elemen input dalam formulir, seperti teks, kata sandi, atau tombol.
+<textarea>: Membuat area teks besar yang memungkinkan pengguna memasukkan teks lebih dari satu baris.
+
+-- Perbedaan antara margin dan padding:
+Margin adalah jarak di luar batas elemen, yang mempengaruhi ruang antara elemen dan elemen-elemen lain di sekitarnya. Margin digunakan untuk mengatur jarak antara elemen dengan elemen lain di luarnya.
+
+Padding adalah jarak di dalam batas elemen, yang mempengaruh ruang antara konten elemen dan batas elemen itu sendiri. Padding digunakan untuk mengatur jarak antara konten elemen dan batasnya.
+
+-- Perbedaan antara framework CSS Tailwind dan Bootstrap:
+- Tailwind CSS:
+Pendekatan "utility-first" yang memungkinkan pengembang untuk membangun tampilan dengan menggunakan kelas-kelas kecil yang disesuaikan.
+Menyediakan sejumlah besar kelas utilitas yang dapat diterapkan pada elemen HTML.
+Lebih fleksibel dan memberikan kendali yang lebih besar dalam desain yang sangat disesuaikan.
+Ukurannya lebih kecil dibandingkan dengan Bootstrap karena hanya menghasilkan kode CSS yang digunakan.
+
+Gunakan Bootstrap jika ingin mengembangkan proyek dengan cepat dan memanfaatkan komponen-komponen bawaan, menginginkan tampilan yang seragam dan lebih tradisional, tidak memiliki banyak waktu atau sumber daya untuk menyesuaikan tampilan secara ekstensif.
+
+- Bootstrap:
+Terintegrasi dengan desain yang sudah ada dan menggunakan sejumlah besar komponen dan gaya bawaan.
+Lebih cocok untuk pengembangan cepat dan prototyping karena komponen-komponen sudah siap digunakan.
+Memiliki desain yang lebih konsisten secara default, cocok untuk proyek yang ingin tampil seragam.
+Lebih cocok untuk pengembangan berbasis template dan proyek yang memerlukan tampilan yang sudah jadi.
+
+Gunakan Tailwind CSS jika ingin desain yang sangat disesuaikan dan fleksibel, lebih suka pendekatan "utility-first" dalam pengembangan tampilan, ingin mengurangi ukuran file CSS yang dihasilkan, memiliki keterampilan CSS yang kuat atau memerlukan tampilan yang sangat khusus.
+
+-- Pengimplementasian checklist:
+1.  Menambahkan Bootstrap ke Aplikasi, CSS, JS dan lainnya
+2. Menambahkan navbar pada halaman aplikasi, yaitu mengkustomisasi kode yg ada pada main.html
+3. Menambahkan Fitur edit dan delete produk pada Aplikasi,
+4. Melakukan kustomisasi kode pada halaman-halaman terkait sehingga tampilan menjadi lebih menarik dan berwarna.
