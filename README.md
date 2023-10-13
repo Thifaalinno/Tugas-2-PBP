@@ -158,3 +158,13 @@ Gunakan Tailwind CSS jika ingin desain yang sangat disesuaikan dan fleksibel, le
 2. Menambahkan navbar pada halaman aplikasi, yaitu mengkustomisasi kode yg ada pada main.html
 3. Menambahkan Fitur edit dan delete produk pada Aplikasi,
 4. Melakukan kustomisasi kode pada halaman-halaman terkait sehingga tampilan menjadi lebih menarik dan berwarna.
+
+-- Tugas 6 --
+- Jelaskan perbedaan antara asynchronous programming dengan synchronous programming:
+Perbedaan utama antara keduanya adalah bagaimana mereka menangani operasi yang memakan waktu. Synchronous programming menghentikan eksekusi sampai operasi selesai, sementara asynchronous programming memungkinkan eksekusi yang lebih fleksibel dengan melanjutkan ke tugas lain saat menunggu hasil operasi yang memakan waktu.
+
+- Paradigma event-driven programming adalah pendekatan pemrograman di mana program merespon kejadian atau peristiwa yang terjadi, seperti interaksi pengguna, masukan data, atau peristiwa lainnya, dengan menjalankan fungsi atau tindakan tertentu. Dalam konteks JavaScript dan AJAX, ini mengacu pada cara program merespons peristiwa yang terjadi di dalam aplikasi web, seperti klik tombol, input pengguna, atau respon dari permintaan HTTP. Contohnya: Menampilkan Data Stok
+
+- Pada AJAX, asynchronous programming memungkinkan pengiriman permintaan HTTP ke server tanpa menghentikan eksekusi kode JavaScript. Ini berarti kode JavaScript dapat terus berjalan, dan ketika respons dari server tiba, callback function akan dijalankan. Dengan demikian, aplikasi web tetap responsif, memungkinkan interaksi pengguna yang lebih halus dan dinamis.
+
+- Fetch API merupakan pendekatan modern dan lebih ringan untuk mengelola permintaan HTTP di dalam aplikasi web, sementara jQuery adalah library yang lebih luas dalam cakupannya. Fetch API mendukung Promises, memberikan kontrol yang lebih besar, dan merupakan standar web, membuatnya menjadi pilihan yang lebih efisien untuk pengembangan proyek baru atau penggunaan AJAX yang sederhana.

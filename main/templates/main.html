@@ -1,27 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Stok Online TokoBerkah</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <span class="navbar-text text-light">Welcome, {{ name }}</span>
+            </li>
+        </ul>
+    </div>
+    <a href="{% url 'main:logout' %}" class="btn btn-danger ml-auto">Logout</a>
+</nav>
+
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">Stok Online TokoBerkah</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <span class="navbar-text text-light">Welcome, {{ name }}</span>
-                    </li>
-                </ul>
-            </div>
-            <a href="{% url 'main:logout' %}" class="btn btn-danger ml-auto">Logout</a>
-        </nav>
+        
 
         <div class="inventory-message mt-4">
             <p>Kamu menyimpan {{ products|length }} item pada aplikasi ini</p>
         </div>
 
-        <table class="table mt-4">
+        <table id="product_table"></table>
+        <!-- <table class="table mt-4">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -53,13 +56,94 @@
                     </tr>
                 {% endfor %}
             </tbody>
-        </table>
+        </table> -->
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form" onsubmit="return false;">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="name" class="col-form-label">Name:</label>
+                                <input type="text" class="form-control" id="name" name="name"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="price" class="col-form-label">Price:</label>
+                                <input type="number" class="form-control" id="price" name="price"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="description" class="col-form-label">Description:</label>
+                                <textarea class="form-control" id="description" name="description"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
 
         <div class="action-buttons mt-4">
             <a href="{% url 'main:create_product' %}">
                 <button class="btn btn-primary">Tambah Produk Baru</button>
             </a>
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
+
             <h5>Sesi terakhir login: {{ last_login }}</h5>
         </div>
     </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        async function getProducts() {
+            return fetch("{% url 'main:get_product_json' %}").then((res) => res.json());
+        }
+
+        async function refreshProducts() {
+            const productTable = document.getElementById("product_table");
+            productTable.innerHTML = "";
+            const products = await getProducts();
+            let htmlString = `<tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Date Added</th>
+            </tr>`;
+            products.forEach((item) => {
+                htmlString += `<tr>
+                    <td>${item.fields.name}</td>
+                    <td>${item.fields.price}</td>
+                    <td>${item.fields.description}</td>
+                    <td>${item.fields.date_added}</td>
+                </tr>`;
+            });
+
+            productTable.innerHTML = htmlString;
+        }
+
+        refreshProducts();
+
+        function addProduct() {
+            fetch("{% url 'main:add_product_ajax' %}", {
+                method: "POST",
+                body: new FormData(document.querySelector('#form'))
+            }).then(refreshProducts);
+
+            document.getElementById("form").reset();
+            return false;
+        }
+
+        document.getElementById("button_add").onclick = addProduct;
+    });
+</script>
+
 {% endblock content %}
